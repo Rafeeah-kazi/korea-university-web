@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Life — Yonsei University</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@400;600;700i&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .life-intro { display:flex; gap:50px; align-items:flex-start; flex-wrap:wrap; margin-bottom:60px; }
+  .life-intro-text { flex:1.4; min-width:280px; }
+  .life-intro-text h2 { font-family:'Playfair Display',serif; font-size:32px; color:#0d1b3e; margin-bottom:16px; line-height:1.3; }
+  .life-intro-text p { font-size:14px; color:#555; line-height:1.9; margin-bottom:14px; }
+  .life-intro-boxes { flex:1; min-width:240px; display:flex; flex-direction:column; gap:14px; }
+  .life-box { background:#f9f7f2; border-left:4px solid #c8a84b; padding:20px 18px; }
+  .life-box h4 { font-family:'Playfair Display',serif; font-size:16px; color:#0d1b3e; margin-bottom:6px; }
+  .life-box p { font-size:12.5px; color:#777; line-height:1.7; }
+
+  .housing-section { background:#0d1b3e; padding:70px 40px; color:#fff; }
+  .housing-inner { max-width:1100px; margin:0 auto; }
+  .housing-grid { display:flex; gap:20px; flex-wrap:wrap; margin-top:28px; }
+  .housing-card { flex:1; min-width:220px; background:#132240; border-top:3px solid #c8a84b; padding:28px 22px; border-radius:4px; }
+  .housing-card h4 { font-family:'Playfair Display',serif; font-size:18px; color:#c8a84b; margin-bottom:8px; }
+  .housing-card p { font-size:13px; color:#bbb; line-height:1.8; margin-bottom:10px; }
+  .housing-card .hc-detail { font-size:11px; color:#888; letter-spacing:1px; }
+
+  .facilities-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; margin-top:28px; }
+  .facility-item { padding:26px 22px; border:1px solid #e0dbd0; border-radius:4px; }
+  .facility-item .fi-icon { font-size:24px; margin-bottom:12px; }
+  .facility-item h4 { font-family:'Playfair Display',serif; font-size:16px; color:#0d1b3e; margin-bottom:8px; }
+  .facility-item p { font-size:13px; color:#666; line-height:1.7; }
+
+  .rc-section { background:#c8a84b; padding:70px 40px; }
+  .rc-inner { max-width:1100px; margin:0 auto; display:flex; gap:50px; align-items:flex-start; flex-wrap:wrap; }
+  .rc-text { flex:1.4; min-width:280px; }
+  .rc-text h2 { font-family:'Playfair Display',serif; font-size:28px; color:#0d1b3e; margin-bottom:14px; }
+  .rc-text p { font-size:13.5px; color:#0d1b3e; line-height:1.9; margin-bottom:12px; opacity:.85; }
+  .rc-aside { flex:1; min-width:220px; background:#0d1b3e; color:#fff; padding:32px 26px; border-radius:4px; }
+  .rc-aside h4 { font-family:'Playfair Display',serif; font-size:18px; color:#c8a84b; margin-bottom:14px; }
+  .rc-aside ul { list-style:none; }
+  .rc-aside ul li { font-size:13px; color:#ccc; padding:8px 0; border-bottom:1px solid #1e3060; line-height:1.6; }
+  .rc-aside ul li:last-child { border-bottom:none; }
+
+  .transport-grid { display:flex; gap:20px; flex-wrap:wrap; margin-top:20px; }
+  .transport-card { flex:1; min-width:200px; padding:26px 22px; border-radius:4px; border-top:3px solid #c8a84b; background:#f9f7f2; }
+  .transport-card h4 { font-family:'Playfair Display',serif; font-size:16px; color:#0d1b3e; margin-bottom:8px; }
+  .transport-card p { font-size:13px; color:#666; line-height:1.7; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="lc">Y</div>
+    <div class="lt">YONSEI <span>UNIVERSITY</span></div>
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="campus.html" class="active">Campus Life</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <p class="tag">Campus Life</p>
+  <h1>Life at Yonsei</h1>
+  <p>Nestled in the heart of Seoul, the Yonsei campus is one of Korea's most beautiful and vibrant — a community of 40,000 students, world-class facilities, rich traditions, and a culture of curiosity, connection, and creativity.</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n">40,251</div><div class="stat-l">Total Students</div></div>
+  <div class="stat"><div class="stat-n">10,012</div><div class="stat-l">On-Campus Housing Capacity</div></div>
+  <div class="stat"><div class="stat-n">6,375</div><div class="stat-l">International Students</div></div>
+  <div class="stat"><div class="stat-n">1885</div><div class="stat-l">Year Founded</div></div>
+</div>
+
+<!-- Intro -->
+<section>
+  <p class="stag">Student Life</p>
+  <h2 class="stitle">A Campus Built for Discovery</h2>
+  <div class="life-intro">
+    <div class="life-intro-text">
+      <h2>More Than a Place to Study</h2>
+      <p>Life at Yonsei is about far more than lectures and exams. The Sinchon campus — set against the backdrop of Ansan Mountain in the heart of western Seoul — is one of Korea's most beloved university environments. Its tree-lined boulevards, historic buildings, and vibrant plazas make it both a place of serious scholarship and joyful living.</p>
+      <p>Students at Yonsei benefit from a comprehensive ecosystem of support, culture, and opportunity. From student-run clubs and societies to state-of-the-art sports facilities, academic support centers, counseling services, and cultural events — the campus is designed to help every student thrive, not just academically, but as whole people.</p>
+      <p>The Yonsei student community is notably international. With over 6,375 international students from across the globe — degree-seeking, credit exchange, and language program students alike — the campus is a genuinely multicultural environment where global friendships and perspectives are part of everyday life.</p>
+    </div>
+    <div class="life-intro-boxes">
+      <div class="life-box">
+        <h4>Student Self-Governing Activities</h4>
+        <p>Yonsei has a long tradition of robust student governance. Student associations at the university, college, and department levels organize academic events, cultural programs, welfare initiatives, and social activities throughout the year.</p>
+      </div>
+      <div class="life-box">
+        <h4>Akaraka — Yonsei's Legendary Festival</h4>
+        <p>Akaraka is Yonsei's annual open-air music and culture festival, one of the most famous university festivals in Korea, traditionally featuring headline performances from Korea's biggest music acts and attended by tens of thousands.</p>
+      </div>
+      <div class="life-box">
+        <h4>Yon-Ko Games (연고전)</h4>
+        <p>The annual Yon-Ko sporting competition between Yonsei University and Korea University is one of Korea's most anticipated collegiate sporting events — a multi-day rivalry festival celebrating school pride, community, and athletic excellence across football, basketball, baseball, hockey, and rugby.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Residential College -->
+<div class="rc-section">
+  <div class="rc-inner">
+    <div class="rc-text">
+      <p class="stag">Residential College</p>
+      <h2>Living & Learning Together</h2>
+      <p>All incoming Yonsei freshmen (with the exception of students in medicine, dentistry, and music) spend their first year at the Songdo International Campus in Incheon as part of the Residential College (RC) program. This unique, immersive experience creates a tight-knit learning community where students from every major live, eat, and learn together.</p>
+      <p>The RC program combines structured academic programming with dormitory life, community service, cultural activities, and leadership development. Students are grouped into RC communities led by Resident Assistants (RAs) and faculty RC Fellows who guide their academic and personal development throughout the year.</p>
+      <p>This first-year experience is intentionally interdisciplinary — designed to broaden students' horizons before they dive deep into their chosen major, and to forge lifelong friendships across disciplines, backgrounds, and nationalities.</p>
+    </div>
+    <div class="rc-aside">
+      <h4>RC Program Highlights</h4>
+      <ul>
+        <li>All freshmen (non-medical/dental/music) participate</li>
+        <li>Located at Songdo International Campus, Incheon</li>
+        <li>Faculty RC Fellows guide student development</li>
+        <li>Interdisciplinary academic programming</li>
+        <li>Community service & cultural activities</li>
+        <li>Fosters cross-disciplinary peer networks</li>
+        <li>24/7 residential support & counseling</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Housing -->
+<div class="housing-section">
+  <div class="housing-inner">
+    <p class="stag" style="color:#c8a84b;">On-Campus Housing</p>
+    <h2 class="stitle" style="color:#fff;">Dormitories & Residences</h2>
+    <p class="ssub" style="color:#aaa;">Yonsei's main campus offers on-campus housing for over 10,000 students, with facilities designed to support both study and personal well-being in the heart of Seoul.</p>
+
+    <div class="housing-grid">
+      <div class="housing-card">
+        <h4>International House</h4>
+        <p>Designed specifically to support international students, the International House provides furnished rooms, Korean language resources, cultural exchange programming, and a welcoming community that helps new arrivals settle into life in Seoul and at Yonsei.</p>
+        <div class="hc-detail">Primary housing for international students</div>
+      </div>
+      <div class="housing-card">
+        <h4>SK Global House</h4>
+        <p>A modern, purpose-built dormitory offering premium facilities for both Korean and international students. SK Global House features study rooms, fitness facilities, common areas, and a design that encourages cross-cultural interaction and academic collaboration.</p>
+        <div class="hc-detail">Mixed Korean & international residential community</div>
+      </div>
+      <div class="housing-card">
+        <h4>Muak Dormitory</h4>
+        <p>One of Yonsei's established residential buildings, Muak Dormitory offers comfortable on-campus accommodation close to academic buildings, the library, and campus facilities. Its central location makes it popular with upperclass and graduate students.</p>
+        <div class="hc-detail">Central campus location — all student levels</div>
+      </div>
+      <div class="housing-card">
+        <h4>Songdo RC Residences</h4>
+        <p>At the Songdo International Campus, the Residential College provides dedicated dormitory spaces as part of the first-year RC experience. Housing at Songdo is integrated with academic programming, dining halls, recreational facilities, and community spaces across a 58,738 m² residential footprint.</p>
+        <div class="hc-detail">Capacity: 4,280 students (MIRAE/Songdo)</div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px; background:#132240; padding:22px 24px; border-radius:4px; border-left:4px solid #c8a84b;">
+      <p style="font-size:13px; color:#ccc; line-height:1.8;"><strong style="color:#c8a84b;">Main Campus Housing:</strong> 239,471 m² of residential space with a total capacity of 10,012 students — one of the largest on-campus residential capacities among Korean universities. Housing applications are coordinated through the university's Office of Student Affairs.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Facilities -->
+<section>
+  <p class="stag">Campus Facilities</p>
+  <h2 class="stitle">World-Class Campus Infrastructure</h2>
+  <p class="ssub">From sports complexes and health centers to libraries, cafeterias, and cultural venues, the Yonsei campus provides everything a student needs to live, study, and flourish.</p>
+
+  <div class="facilities-grid">
+    <div class="facility-item">
+      <div class="fi-icon"></div>
+      <h4>Health & Sports Facilities</h4>
+      <p>Yonsei's sports infrastructure includes the Sports Science Complex, swimming pools, tennis courts, football pitches, an indoor gymnasium, and a dedicated fitness center. These facilities serve students, faculty, and staff, and host competitive intercollegiate sports.</p>
+    </div>
+    <div class="facility-item">
+      <div class="fi-icon"></div>
+      <h4>Yonsei University Library</h4>
+      <p>One of Korea's largest academic library systems, Yonsei's libraries hold millions of volumes and provide comprehensive digital research databases, study spaces, group rooms, and 24-hour access during exam periods. The Central Library is a landmark building at the heart of the Sinchon campus.</p>
+    </div>
+    <div class="facility-item">
+      <div class="fi-icon"></div>
+      <h4>Dining & Stores</h4>
+      <p>The Yonsei campus features numerous cafeterias, restaurants, cafés, and convenience facilities managed through the university and by student-serving private vendors. Multiple dining halls offer diverse Korean and international menus at student-friendly prices throughout the day.</p>
+    </div>
+    <div class="facility-item">
+      <div class="fi-icon"></div>
+      <h4>Campus Health Center</h4>
+      <p>Students have access to on-campus medical and counseling services. In addition to primary care and pharmacy services on campus, students benefit from Yonsei's proximity to Severance Hospital — one of Korea's premier university hospitals — for more specialized medical needs.</p>
+    </div>
+    <div class="facility-item">
+      <div class="fi-icon"></div>
+      <h4>Cultural & Event Venues</h4>
+      <p>The campus hosts several venues for lectures, performances, exhibitions, and ceremonies, including the Yonsei University Auditorium and multiple open-air spaces that serve as the backdrop for Yonsei's famous festivals including Akaraka and the Yon-Ko Games celebrations.</p>
+    </div>
+    <div class="facility-item">
+      <div class="fi-icon"></div>
+      <h4>Transportation & Parking</h4>
+      <p>The Sinchon campus is easily accessible via the Seoul Metro (Sinchon Station, Line 2), buses, and campus shuttle services. Parking information and venue rental/reservation services are available through the university's administrative offices for students, faculty, and visiting guests.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Transport -->
+<section style="background:#f9f7f2; max-width:100%; padding:70px 40px;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="stag">Getting Around</p>
+    <h2 class="stitle">Transportation</h2>
+    <p class="ssub">The Yonsei Sinchon campus is superbly connected to the rest of Seoul and Korea, making it easy for students, faculty, and visitors to navigate their daily commute and weekend explorations.</p>
+    <div class="transport-grid">
+      <div class="transport-card">
+        <h4>Seoul Metro — Line 2</h4>
+        <p>Sinchon Station (Line 2) is located directly adjacent to the Sinchon campus, connecting Yonsei to downtown Seoul, major transit hubs, and the rest of the city within minutes.</p>
+      </div>
+      <div class="transport-card">
+        <h4>Campus Shuttle</h4>
+        <p>Internal campus shuttles operate between key buildings, dormitories, and the library — particularly useful on the expansive main campus and during inclement weather.</p>
+      </div>
+      <div class="transport-card">
+        <h4>Bus Network</h4>
+        <p>Multiple city bus lines serve the Yonsei area, connecting the campus to all major districts of Seoul including Hongdae, Mapo, Jongno, and Gangnam.</p>
+      </div>
+      <div class="transport-card">
+        <h4>Songdo Campus</h4>
+        <p>The Songdo International Campus is accessible from Seoul via the Incheon Subway (Incheon Line 1), making the first-year RC experience easily connected to Seoul's urban amenities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quote">
+  <blockquote>"Ensuring a happy campus, where all Yonseians can pursue studies, research, and personal growth to their hearts' content, will indeed be the shortcut for Yonsei to leap forward into a future beyond boundaries."</blockquote>
+  <cite>— President Dong-Sup Yoon</cite>
+</div>
+
+<footer>
+  <div class="fg">
+    <div class="fc">
+      <h4>Campus Life</h4>
+      <ul>
+        <li><a href="campus.html">Housing</a></li>
+        <li><a href="campus.html">Facilities</a></li>
+        <li><a href="campus.html">Residential College</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Yonsei</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">50 Yonsei-ro, Seodaemun-gu</a></li>
+        <li><a href="#">Seoul, 03722, Republic of Korea</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb">
+    <p>50 Yonsei-ro, Seodaemun-gu, Seoul, 03722, Republic of Korea</p>
+    <p>© 2025 Yonsei University. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Yonsei University</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0a1628;--navy-mid:#122044;--gold:#c9a84c;--gold-light:#e8c96a;--white:#fff;--off-white:#f5f2eb;--gray:#888;--light-gray:#e8e4da}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(10,22,40,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.18);transition:background .4s}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo-emblem{width:42px;height:42px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);font-weight:600}
+.logo-words{line-height:1}
+.logo-words strong{display:block;font-size:13px;font-weight:500;color:var(--white);letter-spacing:2.5px}
+.logo-words span{font-size:9px;color:var(--gold);letter-spacing:3px;font-weight:300}
+.nav-links{display:flex;list-style:none;gap:32px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:12.5px;letter-spacing:.5px;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{padding:9px 22px;background:var(--gold);color:var(--navy)!important;border-radius:3px;font-weight:500!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+
+.hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(10,22,40,.92) 0%,rgba(10,22,40,.35) 50%,rgba(10,22,40,.72) 100%)}
+.hero-blur-top{position:absolute;top:0;left:0;right:0;height:60%;z-index:2;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);mask-image:linear-gradient(to bottom,black 0%,black 45%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,black 0%,black 45%,transparent 100%)}
+.hero-vignette{position:absolute;inset:0;z-index:3;background:radial-gradient(ellipse at center,transparent 40%,rgba(10,22,40,.6) 100%)}
+.hero-content{position:relative;z-index:4;text-align:center;padding:0 24px;max-width:820px;animation:fadeUp 1.2s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{font-size:11px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:28px;animation:fadeUp 1.2s .1s ease both}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,88px);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:24px;animation:fadeUp 1.2s .2s ease both}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.65);font-weight:300;line-height:1.8;max-width:480px;margin:0 auto 44px;animation:fadeUp 1.2s .3s ease both}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1.2s .4s ease both}
+.btn-primary{display:inline-flex;align-items:center;padding:14px 36px;background:var(--gold);color:var(--navy);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:1px;border-radius:3px;transition:background .2s,transform .15s}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;padding:13px 36px;border:1px solid rgba(255,255,255,.35);color:var(--white);text-decoration:none;font-size:13px;letter-spacing:1px;border-radius:3px;transition:border-color .2s,background .2s,transform .15s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08);transform:translateY(-2px)}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:10px;letter-spacing:3px;text-transform:uppercase;animation:fadeUp 1.4s .8s ease both}
+.hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.15)}}
+
+.stats-ribbon{background:var(--navy);display:flex;justify-content:center;flex-wrap:wrap}
+.stat-item{flex:1;min-width:150px;text-align:center;padding:36px 20px;border-right:1px solid rgba(255,255,255,.06);position:relative}
+.stat-item:last-child{border-right:none}
+.stat-item::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:2px;background:var(--gold)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--white);line-height:1}
+.stat-num sup{font-size:18px;vertical-align:super}
+.stat-label{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-top:8px}
+
+.section{padding:100px 48px;max-width:1160px;margin:0 auto}
+.section-label{font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,50px);font-weight:300;color:var(--navy);line-height:1.15;margin-bottom:16px}
+.section-title em{font-style:italic;color:var(--gold)}
+.section-desc{font-size:15px;color:var(--gray);line-height:1.85;max-width:520px;font-weight:300;margin-bottom:56px}
+
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;background:var(--light-gray);border:1px solid var(--light-gray)}
+.pillar{background:var(--white);padding:38px 30px;position:relative;transition:background .3s}
+.pillar::after{content:'';position:absolute;top:0;left:0;width:0;height:3px;background:var(--gold);transition:width .35s}
+.pillar:hover{background:var(--off-white)}
+.pillar:hover::after{width:100%}
+.pillar-number{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--light-gray);line-height:1;margin-bottom:20px}
+.pillar h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--navy);margin-bottom:12px}
+.pillar p{font-size:13.5px;color:var(--gray);line-height:1.8;font-weight:300}
+.pillar-link{display:inline-block;margin-top:20px;color:var(--gold);font-size:12px;font-weight:500;letter-spacing:1px;text-decoration:none}
+.pillar-link:hover{text-decoration:underline}
+
+.quote-section{background:var(--navy);padding:90px 48px;position:relative;overflow:hidden}
+.quote-section::before{content:'\201C';position:absolute;top:-20px;left:40px;font-family:'Cormorant Garamond',serif;font-size:280px;color:rgba(201,168,76,.07);line-height:1;pointer-events:none}
+.quote-inner{max-width:820px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.quote-line{width:48px;height:1px;background:var(--gold);margin:0 auto 36px}
+.quote-text{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:300;font-style:italic;color:var(--white);line-height:1.55;margin-bottom:28px}
+.quote-author{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
+
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.news-card{border:1px solid var(--light-gray);overflow:hidden;transition:border-color .3s,transform .3s}
+.news-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.news-img-area{height:160px;background:var(--navy-mid);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.news-img-area::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.news-card:hover .news-img-area::after{transform:scaleX(1)}
+.news-category{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
+.news-body{padding:24px}
+.news-date{font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.news-body h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:var(--navy);line-height:1.4;margin-bottom:10px}
+.news-body p{font-size:13px;color:var(--gray);line-height:1.75;font-weight:300}
+
+.campus-strip{background:var(--off-white);padding:80px 48px;display:flex;align-items:center;gap:80px;flex-wrap:wrap}
+.campus-text{flex:1;min-width:260px}
+.campus-image-area{flex:1;min-width:260px;height:320px;background:var(--navy-mid);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.campus-image-area::before{content:'';position:absolute;inset:12px;border:1px solid rgba(201,168,76,.3);pointer-events:none}
+.campus-placeholder{font-size:11px;letter-spacing:4px;color:rgba(201,168,76,.5);text-transform:uppercase}
+.divider{width:60px;height:1px;background:var(--gold);margin-bottom:32px}
+
+footer{background:#060e1d;color:#aaa}
+.footer-top{padding:64px 48px 48px;display:flex;gap:48px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-brand{flex:1.5;min-width:200px}
+.footer-brand-logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.footer-emblem{width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold)}
+.footer-brand-name{font-size:12px;font-weight:500;color:var(--white);letter-spacing:2px}
+.footer-brand p{font-size:13px;color:#666;line-height:1.8;max-width:280px;font-weight:300}
+.footer-col{flex:1;min-width:130px}
+.footer-col h5{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;font-weight:400}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:#666;text-decoration:none;font-size:13px;font-weight:300;transition:color .2s}
+.footer-col ul li a:hover{color:var(--white)}
+.footer-bottom{padding:22px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:11.5px;color:#444}
+.footer-bottom span{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-emblem">Y</div>
+    <div class="logo-words"><strong>YONSEI</strong><span>UNIVERSITY · EST. 1885</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="campus.html">Campus Life</a></li>
+    <li><a href="admissions.html" class="nav-cta">Apply Now</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-blur-top"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Seoul, Korea &nbsp;·&nbsp; Established 1885</p>
+    <h1 class="hero-title">Truth &amp; <em>Freedom</em><br>Since 1885</h1>
+    <p class="hero-sub">One of Asia's leading research universities, shaping the minds that will lead tomorrow's world.</p>
+    <div class="hero-actions">
+      <a href="admissions.html" class="btn-primary">Apply Now</a>
+      <a href="about.html" class="btn-ghost">Explore Yonsei</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<div class="stats-ribbon">
+  <div class="stat-item"><div class="stat-num">38,000<sup>+</sup></div><div class="stat-label">Students</div></div>
+  <div class="stat-item"><div class="stat-num">3,500<sup>+</sup></div><div class="stat-label">Faculty Members</div></div>
+  <div class="stat-item"><div class="stat-num">18</div><div class="stat-label">Colleges</div></div>
+  <div class="stat-item"><div class="stat-num">Top 80</div><div class="stat-label">QS World Ranking</div></div>
+  <div class="stat-item"><div class="stat-num">130<sup>+</sup></div><div class="stat-label">Countries Represented</div></div>
+</div>
+
+<div class="section">
+  <p class="section-label">Why Choose Us</p>
+  <h2 class="section-title">A Legacy of <em>Excellence</em></h2>
+  <p class="section-desc">For over 130 years, Yonsei University has led academic innovation, producing leaders across every field around the globe.</p>
+  <div class="pillars">
+    <div class="pillar"><div class="pillar-number">01</div><h3>World-Class Education</h3><p>18 colleges and 140+ departments offering undergraduate, graduate, and doctoral programmes in every discipline.</p><a href="academics.html" class="pillar-link">Explore Programmes →</a></div>
+    <div class="pillar"><div class="pillar-number">02</div><h3>Cutting-Edge Research</h3><p>Over 100 research institutes tackling global challenges across medicine, technology, and the humanities.</p><a href="research.html" class="pillar-link">View Research →</a></div>
+    <div class="pillar"><div class="pillar-number">03</div><h3>Global Community</h3><p>Students from 130 countries with active partnerships at more than 1,000 universities worldwide.</p><a href="campus.html" class="pillar-link">Campus Life →</a></div>
+    <div class="pillar"><div class="pillar-number">04</div><h3>Historic Campus</h3><p>A stunning 250-acre campus in the heart of Seoul, blending century-old heritage with modern facilities.</p><a href="campus.html" class="pillar-link">See Campus →</a></div>
+  </div>
+</div>
+
+<div class="quote-section">
+  <div class="quote-inner">
+    <div class="quote-line"></div>
+    <p class="quote-text">"We do not merely teach students — we cultivate the leaders who will shape a better world."</p>
+    <p class="quote-author">— President, Yonsei University</p>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-label">Latest News</p>
+  <h2 class="section-title">Yonsei in the <em>News</em></h2>
+  <p class="section-desc">Stay up to date with the latest achievements, events, and stories from our community.</p>
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-img-area"><span class="news-category">Research</span></div>
+      <div class="news-body"><p class="news-date">April 2025</p><h4>Breakthrough in Cancer Treatment by Yonsei Medical Team</h4><p>Published in Nature Medicine, the study opens new paths for targeted therapy globally.</p></div>
+    </div>
+    <div class="news-card">
+      <div class="news-img-area"><span class="news-category">Rankings</span></div>
+      <div class="news-body"><p class="news-date">March 2025</p><h4>Yonsei Rises to Top 80 in QS World University Rankings</h4><p>Our investment in research and global ties continues to push us higher every year.</p></div>
+    </div>
+    <div class="news-card">
+      <div class="news-img-area"><span class="news-category">Campus</span></div>
+      <div class="news-body"><p class="news-date">February 2025</p><h4>New Global Innovation Hub Opens on Sinchon Campus</h4><p>The facility will support student startups and international research collaborations.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="campus-strip">
+  <div class="campus-text">
+    <p class="section-label">Campus Life</p>
+    <h2 class="section-title">Live, Learn &amp; <em>Grow</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc" style="margin-bottom:32px">From vibrant student clubs to world-class athletic facilities, Yonsei offers a campus experience unlike any other in Asia.</p>
+    <a href="campus.html" class="btn-primary" style="color:var(--navy)">Discover Campus Life</a>
+  </div>
+  <div class="campus-image-area"><img src="uni.jpg" alt="Sinchon Campus" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-brand-logo"><div class="footer-emblem">Y</div><span class="footer-brand-name">YONSEI UNIVERSITY</span></div>
+      <p>Shaping tomorrow's leaders through truth, freedom, and academic excellence since 1885.</p>
+    </div>
+    <div class="footer-col"><h5>University</h5><ul><li><a href="about.html">About Us</a></li><li><a href="about.html">History</a></li><li><a href="about.html">Leadership</a></li><li><a href="about.html">Vision &amp; Mission</a></li></ul></div>
+    <div class="footer-col"><h5>Academics</h5><ul><li><a href="academics.html">Undergraduate</a></li><li><a href="academics.html">Graduate</a></li><li><a href="academics.html">All Colleges</a></li></ul></div>
+    <div class="footer-col"><h5>Research</h5><ul><li><a href="research.html">Institutes</a></li><li><a href="research.html">Publications</a></li><li><a href="research.html">Partnerships</a></li></ul></div>
+    <div class="footer-col"><h5>Admissions</h5><ul><li><a href="admissions.html">How to Apply</a></li><li><a href="admissions.html">Scholarships</a></li><li><a href="admissions.html">International</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>Yonsei-ro, Seodaemun-gu, Seoul, Korea &nbsp;·&nbsp; <span>Created by Rafeeah Kazi</span></p>
+    <p>© 2025 Yonsei University. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

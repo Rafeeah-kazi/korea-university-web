@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions — Yonsei University</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@400;600;700i&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .adm-intro { display:flex; gap:50px; align-items:flex-start; flex-wrap:wrap; margin-bottom:60px; }
+  .adm-intro-text { flex:1.4; min-width:280px; }
+  .adm-intro-text h2 { font-family:'Playfair Display',serif; font-size:32px; color:#0d1b3e; margin-bottom:16px; line-height:1.3; }
+  .adm-intro-text p { font-size:14px; color:#555; line-height:1.9; margin-bottom:14px; }
+  .adm-aside { flex:1; min-width:240px; display:flex; flex-direction:column; gap:14px; }
+  .adm-aside-box { background:#0d1b3e; padding:22px 20px; border-radius:4px; }
+  .adm-aside-box h4 { font-family:'Playfair Display',serif; font-size:16px; color:#c8a84b; margin-bottom:8px; }
+  .adm-aside-box p { font-size:12.5px; color:#bbb; line-height:1.7; }
+  .adm-aside-box a { display:inline-block; margin-top:10px; font-size:11px; color:#c8a84b; font-weight:600; letter-spacing:1px; }
+
+  .steps-section { background:#0d1b3e; padding:70px 40px; }
+  .steps-inner { max-width:1100px; margin:0 auto; }
+  .steps-grid { display:flex; gap:0; flex-wrap:wrap; margin-top:30px; }
+  .step-item { flex:1; min-width:200px; padding:32px 24px; border-right:1px solid #1e3060; position:relative; }
+  .step-item:last-child { border-right:none; }
+  .step-num { font-family:'Playfair Display',serif; font-size:48px; color:#c8a84b; opacity:.4; line-height:1; margin-bottom:10px; }
+  .step-item h4 { font-size:14px; font-weight:600; color:#fff; margin-bottom:10px; }
+  .step-item p { font-size:12.5px; color:#aaa; line-height:1.8; }
+
+  .programs-section { background:#f9f7f2; padding:70px 40px; }
+  .programs-inner { max-width:1100px; margin:0 auto; }
+  .program-cards { display:flex; gap:20px; flex-wrap:wrap; margin-top:28px; }
+  .program-card { flex:1; min-width:240px; background:#fff; border-radius:4px; border-top:4px solid #c8a84b; padding:30px 24px; box-shadow:0 2px 12px rgba(0,0,0,0.04); }
+  .program-card h3 { font-family:'Playfair Display',serif; font-size:20px; color:#0d1b3e; margin-bottom:10px; }
+  .program-card p { font-size:13px; color:#666; line-height:1.8; margin-bottom:14px; }
+  .program-card ul { list-style:none; }
+  .program-card ul li { font-size:12.5px; color:#777; padding:6px 0; border-bottom:1px solid #f0ece0; }
+  .program-card ul li:last-child { border-bottom:none; }
+  .program-card ul li::before { content:'✓  '; color:#c8a84b; font-weight:600; }
+
+  .scholarship-section { padding:70px 40px; }
+  .scholarship-inner { max-width:1100px; margin:0 auto; }
+  .scholarship-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; margin-top:24px; }
+  .scholarship-item { padding:28px 22px; border:1px solid #e0dbd0; border-radius:4px; position:relative; }
+  .scholarship-item::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:#c8a84b; border-radius:4px 4px 0 0; }
+  .scholarship-item h4 { font-family:'Playfair Display',serif; font-size:17px; color:#0d1b3e; margin-bottom:10px; }
+  .scholarship-item p { font-size:13px; color:#666; line-height:1.8; }
+  .scholarship-amount { font-family:'Playfair Display',serif; font-size:22px; color:#c8a84b; margin-top:10px; }
+
+  .visa-section { background:#f9f7f2; padding:60px 40px; }
+  .visa-inner { max-width:1100px; margin:0 auto; display:flex; gap:50px; align-items:flex-start; flex-wrap:wrap; }
+  .visa-text { flex:1.3; min-width:280px; }
+  .visa-text h2 { font-family:'Playfair Display',serif; font-size:26px; color:#0d1b3e; margin-bottom:14px; }
+  .visa-text p { font-size:13.5px; color:#555; line-height:1.9; margin-bottom:12px; }
+  .visa-types { flex:1; min-width:220px; display:flex; flex-direction:column; gap:12px; }
+  .visa-type { background:#fff; padding:18px 20px; border-left:3px solid #c8a84b; border-radius:0 4px 4px 0; }
+  .visa-type h5 { font-size:13px; font-weight:600; color:#0d1b3e; margin-bottom:4px; }
+  .visa-type p { font-size:12px; color:#888; line-height:1.6; }
+
+  .why-grid { display:flex; gap:20px; flex-wrap:wrap; margin-top:20px; }
+  .why-item { flex:1; min-width:200px; text-align:center; padding:30px 20px; }
+  .why-icon { font-size:32px; margin-bottom:12px; }
+  .why-item h4 { font-family:'Playfair Display',serif; font-size:16px; color:#0d1b3e; margin-bottom:8px; }
+  .why-item p { font-size:13px; color:#666; line-height:1.7; }
+
+  .cta-section { background:#c8a84b; padding:60px 40px; text-align:center; }
+  .cta-section h2 { font-family:'Playfair Display',serif; font-size:32px; color:#0d1b3e; margin-bottom:14px; }
+  .cta-section p { font-size:14px; color:#0d1b3e; opacity:.8; max-width:560px; margin:0 auto 28px; line-height:1.8; }
+  .cta-section .btn { background:#0d1b3e; color:#c8a84b; }
+  .cta-section .btn:hover { background:#132240; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="lc">Y</div>
+    <div class="lt">YONSEI <span>UNIVERSITY</span></div>
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="campus.html">Campus Life</a></li>
+    <li><a href="admissions.html" class="active">Admissions</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <p class="tag">Join Yonsei</p>
+  <h1>Apply to Yonsei</h1>
+  <p>Your journey to one of Asia's leading universities begins here. Yonsei welcomes outstanding students from around the world to become part of a community defined by truth, freedom, and ambition.</p>
+  <a href="https://www.yonsei.ac.kr/en_sc/2252/subview.do" class="btn" target="_blank">Start Your Application</a>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n">40,251</div><div class="stat-l">Total Enrolled Students</div></div>
+  <div class="stat"><div class="stat-n">6,375</div><div class="stat-l">International Students</div></div>
+  <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Countries Represented</div></div>
+  <div class="stat"><div class="stat-n">144B KRW</div><div class="stat-l">Scholarships Awarded (2023)</div></div>
+</div>
+
+<!-- Intro -->
+<section>
+  <p class="stag">Admissions Overview</p>
+  <h2 class="stitle">Why Yonsei?</h2>
+
+  <div class="adm-intro">
+    <div class="adm-intro-text">
+      <h2>A University with 140 Years of Excellence</h2>
+      <p>Yonsei University is one of Korea's most prestigious universities and a globally recognized research institution. Whether you are a Korean national, an overseas Korean, or an international student from anywhere in the world, Yonsei offers a transformative education rooted in Christian values of truth and freedom — combined with cutting-edge research, world-class faculty, and a vibrant student life in the heart of Seoul.</p>
+      <p>Our undergraduate programs span 14 colleges across the humanities, sciences, engineering, business, medicine, and the arts. Graduate study is available through 15 graduate schools offering master's, doctoral, and combined programs. For international students, Yonsei also offers a range of non-degree programs, credit exchange opportunities, and the world-renowned Korean Language Institute (KLI).</p>
+      <p>Located in Sinchon, one of Seoul's most energetic and culturally rich neighborhoods, the Yonsei campus places students at the intersection of Korea's academic excellence and its dynamic modern culture. Seoul is consistently ranked among the world's top cities for students, and Yonsei sits at the very heart of it.</p>
+    </div>
+    <div class="adm-aside">
+      <div class="adm-aside-box">
+        <h4>Undergraduate Admissions</h4>
+        <p>Applications for international undergraduate students are managed through the Global Admissions Office. Yonsei accepts applications for degree-seeking students across all undergraduate colleges.</p>
+        <a href="#">View Requirements →</a>
+      </div>
+      <div class="adm-aside-box">
+        <h4>Graduate Admissions</h4>
+        <p>The General Graduate School and professional schools accept applications each semester. Requirements vary by program; contact individual departments for specific research fit guidance.</p>
+        <a href="#">Graduate Programs →</a>
+      </div>
+      <div class="adm-aside-box">
+        <h4>Non-Degree & Exchange</h4>
+        <p>Credit exchange and visiting student programs are available for students enrolled at partner institutions worldwide. Over 1,485 students participate annually in Yonsei's Korean Language Institute programs.</p>
+        <a href="#">Exchange Programs →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Yonsei -->
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-icon"></div>
+      <h4>Top-Ranked in Asia</h4>
+      <p>Consistently ranked among the top universities in Korea and Asia, with global recognition in research, business, medicine, and engineering.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"></div>
+      <h4>Global Community</h4>
+      <p>Over 6,375 international students from more than 50 countries, making Yonsei one of Korea's most internationally diverse campuses.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"></div>
+      <h4>Research Excellence</h4>
+      <p>175 research centers, access to the Severance Hospital health system, and a faculty of 1,786 full-time researchers across every discipline.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"></div>
+      <h4>Seoul — A World-Class City</h4>
+      <p>Study in one of the world's most exciting, safe, and student-friendly cities — home to K-culture, technology, cuisine, and infinite opportunity.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"></div>
+      <h4>Generous Scholarships</h4>
+      <p>Yonsei awarded over 144 billion KRW in scholarships in 2023, with merit and need-based opportunities available to both Korean and international students.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Application Steps -->
+<div class="steps-section">
+  <div class="steps-inner">
+    <p class="stag" style="color:#c8a84b;">Application Process</p>
+    <h2 class="stitle" style="color:#fff;">How to Apply</h2>
+    <p class="ssub" style="color:#aaa;">The application process varies slightly between undergraduate, graduate, and non-degree programs, but all international applicants follow a clear, structured path. Here is the general process for undergraduate international applicants.</p>
+
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <h4>Choose Your Program</h4>
+        <p>Research Yonsei's 14 undergraduate colleges and select the degree program that aligns with your academic background, interests, and career goals. Review language requirements and any program-specific criteria.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <h4>Prepare Your Documents</h4>
+        <p>Gather required materials: academic transcripts (officially translated), graduation certificates, language proficiency scores (TOPIK for Korean-medium programs, TOEFL/IELTS for English programs), personal statement, and letters of recommendation.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <h4>Submit Your Application</h4>
+        <p>Applications are submitted online through Yonsei's admissions portal. Ensure all documents are complete and uploaded before the published deadline — late or incomplete applications will not be reviewed.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <h4>Visa & Enrollment</h4>
+        <p>Admitted students must apply for the appropriate student visa (D-2 for degree-seeking students). The university's Global Students Center (GOSC) provides full visa issuance support and orientation for incoming international students.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Programs -->
+<div class="programs-section">
+  <div class="programs-inner">
+    <p class="stag">Programs Available</p>
+    <h2 class="stitle">Degree & Non-Degree Options</h2>
+    <p class="ssub">Yonsei offers flexible pathways for students at every stage of their academic journey.</p>
+    <div class="program-cards">
+      <div class="program-card">
+        <h3>Undergraduate (Bachelor's)</h3>
+        <p>Four-year degree programs across 14 colleges at the Sinchon and International campuses. All freshmen begin at the Songdo Residential College for a transformative first-year experience.</p>
+        <ul>
+          <li>14 undergraduate colleges</li>
+          <li>Korean and English-medium options</li>
+          <li>Underwood International College (UIC) — English only</li>
+          <li>Global Leaders College for overseas Koreans</li>
+          <li>Residential College first-year program</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <h3>Graduate (Master's & PhD)</h3>
+        <p>Advanced study through the General Graduate School and 14 specialized professional graduate schools. Applications accepted each semester with separate deadlines per program.</p>
+        <ul>
+          <li>General Graduate School</li>
+          <li>Professional graduate schools (MBA, Law, etc.)</li>
+          <li>Combined MS-PhD programs</li>
+          <li>Research-intensive doctoral training</li>
+          <li>International scholar residencies</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <h3>Non-Degree Programs</h3>
+        <p>For visiting and exchange students who wish to experience Yonsei without committing to a full degree. Ideal for students currently enrolled at partner universities worldwide.</p>
+        <ul>
+          <li>Credit exchange (partner universities)</li>
+          <li>Korean Language Institute (KLI) — 1,485+ annual students</li>
+          <li>Visiting researcher programs</li>
+          <li>Summer/Winter intensive programs</li>
+          <li>Audit and cultural programs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scholarships -->
+<div class="scholarship-section">
+  <div class="scholarship-inner">
+    <p class="stag">Financial Support</p>
+    <h2 class="stitle">Scholarships & Financial Aid</h2>
+    <p class="ssub">Yonsei University is committed to making a world-class education accessible. The university awarded over 144 billion KRW in scholarships in 2023 alone — covering merit scholarships, need-based aid, international student grants, and government-funded programs.</p>
+
+    <div class="scholarship-grid">
+      <div class="scholarship-item">
+        <h4>Merit Scholarships</h4>
+        <p>Awarded to students with exceptional academic performance. Merit scholarships at Yonsei can cover a substantial portion of tuition and are reviewed each semester based on GPA and academic standing.</p>
+        <div class="scholarship-amount">Up to 100% tuition</div>
+      </div>
+      <div class="scholarship-item">
+        <h4>Need-Based Aid</h4>
+        <p>Students demonstrating financial need may apply for need-based scholarships and emergency financial support. Applications are assessed through the Office of Student Affairs with consideration for family income and circumstances.</p>
+        <div class="scholarship-amount">Partial to full tuition</div>
+      </div>
+      <div class="scholarship-item">
+        <h4>International Student Scholarships</h4>
+        <p>Yonsei offers dedicated scholarships for international students, including the Global Korea Scholarship (GKS / KGSP) funded by the Korean government, as well as Yonsei's own international admissions scholarships for outstanding applicants.</p>
+        <div class="scholarship-amount">Tuition + living allowance</div>
+      </div>
+      <div class="scholarship-item">
+        <h4>Research Assistantships</h4>
+        <p>Graduate students engaged in research may qualify for research assistantships (RA) or teaching assistantships (TA) funded by faculty grants or university research budgets, providing a stipend and tuition waiver in exchange for research contributions.</p>
+        <div class="scholarship-amount">Stipend + tuition waiver</div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px; background:#0d1b3e; padding:26px 28px; border-radius:4px;">
+      <p style="font-size:13.5px; color:#ccc; line-height:1.8;"><strong style="color:#c8a84b;">Total Scholarships Awarded (2023):</strong> Main Campus — 114,931 million KRW | MIRAE Campus — 29,303 million KRW. Contact the Office of Scholarships for current scholarship categories, application cycles, and eligibility requirements.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Visa -->
+<div class="visa-section">
+  <div class="visa-inner">
+    <div class="visa-text">
+      <p class="stag">Visa Information</p>
+      <h2>Student Visa Guidance</h2>
+      <p>All international students studying at Yonsei on a degree or long-term non-degree basis require a valid Korean student visa. The Yonsei Global Students Center (GOSC) provides comprehensive support for visa issuance, from document preparation to post-arrival registration.</p>
+      <p>The primary visa types for Yonsei students are the D-2 (Academic Sojourner) for degree-seeking students and D-4 (Language Training) for those attending the Korean Language Institute. Visiting scholars typically hold D-2 or E-1 (Professor) visas depending on their engagement.</p>
+      <p>Yonsei's visa support team assists with Certificate of Admission issuance, document authentication, alien registration, and any changes to visa status during enrollment. Students are strongly encouraged to begin the visa process as soon as they receive their admission letter.</p>
+    </div>
+    <div class="visa-types">
+      <div class="visa-type">
+        <h5>D-2 Visa — Academic Sojourner</h5>
+        <p>For degree-seeking students (undergraduate, master's, doctoral). Required for all international students enrolled in a degree program at Yonsei.</p>
+      </div>
+      <div class="visa-type">
+        <h5>D-4 Visa — Language Training</h5>
+        <p>For students attending the Korean Language Institute (KLI) or other non-degree language programs. May be converted to a D-2 if the student later enrolls in a degree program.</p>
+      </div>
+      <div class="visa-type">
+        <h5>Credit Exchange Students</h5>
+        <p>Students arriving via official partner university agreements may be eligible for a C-3 (Short-term) or D-2 visa depending on the length and nature of their exchange. Consult GOSC for guidance.</p>
+      </div>
+      <div class="visa-type">
+        <h5>For Visiting Scholars</h5>
+        <p>International scholars and postdoctoral researchers should consult Yonsei's Office of International Affairs (GOSC) for E-1 or D-2 visa eligibility based on their research appointment terms.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Begin Your Yonsei Journey</h2>
+  <p>Applications for international students are accepted twice yearly. Visit the official Yonsei admissions portal to check current deadlines, download application guides, and submit your materials.</p>
+  <a href="https://www.yonsei.ac.kr/en_sc/2252/subview.do" class="btn" target="_blank">Apply Now at Yonsei.ac.kr</a>
+</div>
+
+<footer>
+  <div class="fg">
+    <div class="fc">
+      <h4>Admissions</h4>
+      <ul>
+        <li><a href="admissions.html">Undergraduate</a></li>
+        <li><a href="admissions.html">Graduate</a></li>
+        <li><a href="admissions.html">Scholarships</a></li>
+        <li><a href="admissions.html">Visa Information</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Explore Yonsei</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="campus.html">Campus Life</a></li>
+        <li><a href="research.html">Research</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">50 Yonsei-ro, Seodaemun-gu</a></li>
+        <li><a href="#">Seoul, 03722, Republic of Korea</a></li>
+        <li><a href="#">+82-2-2123-2114</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb">
+    <p>50 Yonsei-ro, Seodaemun-gu, Seoul, 03722, Republic of Korea</p>
+    <p>© 2025 Yonsei University. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

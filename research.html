@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Yonsei University</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@400;600;700i&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .research-intro { display:flex; gap:56px; align-items:flex-start; flex-wrap:wrap; margin-bottom:60px; }
+  .research-intro-text { flex:1.4; min-width:280px; }
+  .research-intro-text h2 { font-family:'Playfair Display',serif; font-size:32px; color:#0d1b3e; margin-bottom:16px; line-height:1.3; }
+  .research-intro-text p { font-size:14px; color:#555; line-height:1.9; margin-bottom:14px; }
+  .research-intro-aside { flex:1; min-width:250px; display:flex; flex-direction:column; gap:14px; }
+  .r-stat-box { background:#0d1b3e; color:#fff; padding:24px; border-radius:4px; }
+  .r-stat-box strong { display:block; font-family:'Playfair Display',serif; font-size:32px; color:#c8a84b; }
+  .r-stat-box span { font-size:11px; color:#aaa; letter-spacing:2px; text-transform:uppercase; }
+
+  .focus-areas { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; margin-top:20px; }
+  .focus-card { padding:32px 26px; border-radius:4px; position:relative; overflow:hidden; }
+  .focus-card.dark { background:#0d1b3e; color:#fff; }
+  .focus-card.light { background:#f9f7f2; border:1px solid #e0dbd0; }
+  .focus-card .fc-icon { font-size:28px; margin-bottom:16px; }
+  .focus-card h3 { font-family:'Playfair Display',serif; font-size:20px; margin-bottom:12px; }
+  .focus-card.dark h3 { color:#c8a84b; }
+  .focus-card.light h3 { color:#0d1b3e; }
+  .focus-card p { font-size:13px; line-height:1.8; }
+  .focus-card.dark p { color:#bbb; }
+  .focus-card.light p { color:#666; }
+
+  .centers-section { background:#f9f7f2; padding:70px 40px; }
+  .centers-inner { max-width:1100px; margin:0 auto; }
+  .centers-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1px; background:#e0dbd0; border:1px solid #e0dbd0; margin-top:28px; }
+  .center-cell { background:#fff; padding:24px 20px; }
+  .center-cell strong { display:block; font-family:'Playfair Display',serif; font-size:28px; color:#c8a84b; }
+  .center-cell span { font-size:11px; color:#999; letter-spacing:1.5px; text-transform:uppercase; margin-top:4px; display:block; }
+
+  .research-pillars { display:flex; gap:0; flex-wrap:wrap; margin-top:20px; }
+  .pillar { flex:1; min-width:200px; padding:32px 26px; border-right:1px solid #e0dbd0; }
+  .pillar:last-child { border-right:none; }
+  .pillar-num { font-family:'Playfair Display',serif; font-size:40px; color:#e0dbd0; margin-bottom:-10px; }
+  .pillar h4 { font-family:'Playfair Display',serif; font-size:16px; color:#0d1b3e; margin-bottom:10px; }
+  .pillar p { font-size:12.5px; color:#777; line-height:1.8; }
+
+  .severance-section { display:flex; gap:50px; align-items:flex-start; flex-wrap:wrap; margin-bottom:50px; }
+  .severance-text { flex:1.3; min-width:280px; }
+  .severance-text h2 { font-family:'Playfair Display',serif; font-size:28px; color:#0d1b3e; margin-bottom:14px; }
+  .severance-text p { font-size:13.5px; color:#555; line-height:1.9; margin-bottom:12px; }
+  .severance-highlight { flex:1; min-width:240px; background:#c8a84b; padding:32px 28px; border-radius:4px; }
+  .severance-highlight h4 { font-family:'Playfair Display',serif; font-size:18px; color:#0d1b3e; margin-bottom:14px; }
+  .severance-highlight ul { list-style:none; }
+  .severance-highlight ul li { font-size:13px; color:#0d1b3e; padding:8px 0; border-bottom:1px solid rgba(13,27,62,0.15); line-height:1.6; }
+  .severance-highlight ul li:last-child { border-bottom:none; }
+  .severance-highlight ul li::before { content:'→ '; font-weight:600; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="lc">Y</div>
+    <div class="lt">YONSEI <span>UNIVERSITY</span></div>
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="campus.html">Campus Life</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <p class="tag">Discovery & Innovation</p>
+  <h1>Research at Yonsei</h1>
+  <p>With 175 research centers across two campuses and thousands of active researchers, Yonsei University is driving breakthroughs in artificial intelligence, biomedical science, sustainability, and beyond — shaping the future of Korea and the world.</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n">175</div><div class="stat-l">Research Centers</div></div>
+  <div class="stat"><div class="stat-n">1,786</div><div class="stat-l">Full-time Faculty</div></div>
+  <div class="stat"><div class="stat-n">12,466</div><div class="stat-l">Graduate Researchers</div></div>
+  <div class="stat"><div class="stat-n">Top 3</div><div class="stat-l">Korean Research Universities</div></div>
+</div>
+
+<section>
+  <p class="stag">Research Overview</p>
+  <h2 class="stitle">A Global Research Powerhouse</h2>
+
+  <div class="research-intro">
+    <div class="research-intro-text">
+      <h2>Leading Innovation Across Every Discipline</h2>
+      <p>Yonsei University's research enterprise spans the full arc of human inquiry — from fundamental science and the humanities to cutting-edge engineering and clinical medicine. Our researchers are published in the world's leading journals, cited by scholars globally, and partnered with leading corporations, government agencies, and international institutions.</p>
+      <p>The university has made a strategic commitment to four areas of future research leadership: artificial intelligence and digital transformation, biotechnology and the life sciences, renewable energy and sustainability, and interdisciplinary approaches to global social challenges. These pillars reflect both Yonsei's existing strengths and the most urgent questions facing humanity today.</p>
+      <p>Yonsei's research infrastructure includes the Elsevier PURE Researchers Portal, which provides a comprehensive, searchable database of all faculty publications, grants, and research outputs — enabling transparency and fostering collaboration with partners worldwide.</p>
+    </div>
+    <div class="research-intro-aside">
+      <div class="r-stat-box"><strong>152</strong><span>Research Centers (Main Campus)</span></div>
+      <div class="r-stat-box"><strong>23</strong><span>Research Centers (MIRAE Campus)</span></div>
+      <div class="r-stat-box"><strong>67</strong><span>University-wide Centers</span></div>
+      <div class="r-stat-box"><strong>71</strong><span>College & Graduate School Centers</span></div>
+    </div>
+  </div>
+
+  <!-- Research Pillars -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:22px; color:#0d1b3e; margin-bottom:6px;">Four Pillars of Future Research</h3>
+  <p style="font-size:13px; color:#888; margin-bottom:24px;">President Yoon's strategic research agenda for Yonsei's next era of global leadership.</p>
+  <div class="research-pillars" style="border:1px solid #e0dbd0; border-radius:4px; overflow:hidden;">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h4>Artificial Intelligence & Digital Transformation</h4>
+      <p>Leading research in machine learning, computer vision, natural language processing, and human-AI interaction, preparing students and society for an AI-driven world.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h4>Biotechnology & Life Sciences</h4>
+      <p>Bridging fundamental biology and clinical applications through the College of Life Science, College of Medicine, and Severance Hospital — one of Asia's premier academic medical centers.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h4>Renewable Energy & Climate</h4>
+      <p>Addressing the energy transition and climate crisis through interdisciplinary collaboration spanning engineering, atmospheric sciences, and public policy.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <h4>Global Society & Human Flourishing</h4>
+      <p>Examining quality of life in aging societies, human dignity in the AI era, ecological ethics, and the resolution of international and social conflicts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Focus Areas -->
+<section style="background:#0d1b3e; max-width:100%; padding:80px 40px;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="stag">Key Research Areas</p>
+    <h2 class="stitle" style="color:#fff;">Areas of Research Excellence</h2>
+    <p class="ssub" style="color:#aaa;">Yonsei's researchers are advancing knowledge across a wide spectrum of disciplines, with particular strength in these areas of global impact.</p>
+    <div class="focus-areas">
+      <div class="focus-card dark">
+        <div class="fc-icon"></div>
+        <h3>AI & Machine Learning</h3>
+        <p>The College of Computing — home to dedicated AI and Computer Science programs — is producing world-class research in deep learning, AI ethics, autonomous systems, and intelligent semiconductors. Yonsei's AI research benefits from close industry partnerships and interdisciplinary collaboration across engineering, medicine, and the social sciences.</p>
+      </div>
+      <div class="focus-card dark">
+        <div class="fc-icon"></div>
+        <h3>Biomedical Science</h3>
+        <p>The College of Life Science & Biotechnology leads research in systems biology, biochemistry, and applied biotechnology. Working in close synergy with Severance Hospital, Yonsei researchers translate fundamental discoveries into clinical breakthroughs — addressing cancer, aging, rare diseases, and precision medicine.</p>
+      </div>
+      <div class="focus-card dark">
+        <div class="fc-icon"></div>
+        <h3>Energy & Environment</h3>
+        <p>With dedicated programs in Battery Engineering, Chemical Engineering, and Atmospheric Sciences, Yonsei is at the forefront of research into next-generation batteries, carbon capture, climate modeling, and sustainable materials — essential contributions to Korea's and the world's energy transition.</p>
+      </div>
+      <div class="focus-card dark">
+        <div class="fc-icon"></div>
+        <h3>Social Sciences & Humanities</h3>
+        <p>Yonsei's humanistic research tradition — rooted in philosophy, history, political science, and theology — enriches and contextualizes scientific research. The university is committed to ensuring that technological progress serves human dignity, social justice, and international cooperation.</p>
+      </div>
+      <div class="focus-card dark">
+        <div class="fc-icon"></div>
+        <h3>Clinical Medicine</h3>
+        <p>The Yonsei University Health System, anchored by Severance Hospital, Gangnam Severance Hospital, and Wonju Severance Christian Hospital, is one of Korea's most comprehensive academic health systems. Clinical research across oncology, cardiology, neurology, and surgery integrates directly with Yonsei's graduate training programs.</p>
+      </div>
+      <div class="focus-card dark">
+        <div class="fc-icon"></div>
+        <h3>Basic Sciences</h3>
+        <p>From astrophysics and pure mathematics to particle physics and atmospheric modeling, Yonsei's College of Science pursues knowledge for its own sake — generating fundamental insights that underpin applied research across every field. The College hosts dedicated departments in Astronomy, Atmospheric Sciences, and Earth System Sciences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Research Centers -->
+<div class="centers-section">
+  <div class="centers-inner">
+    <p class="stag">Infrastructure</p>
+    <h2 class="stitle">Research Centers at a Glance</h2>
+    <p class="ssub">Yonsei's research centers are organized at the university, intercollegiate, and college/graduate school levels — enabling both deep specialization and broad interdisciplinary collaboration. The following figures reflect official data as of April 2024.</p>
+
+    <div class="centers-grid">
+      <div class="center-cell"><strong>67</strong><span>University-wide Centers (Main Campus)</span></div>
+      <div class="center-cell"><strong>14</strong><span>Intercollegiate Centers (Main Campus)</span></div>
+      <div class="center-cell"><strong>71</strong><span>College & Grad School Centers (Main)</span></div>
+      <div class="center-cell"><strong>2</strong><span>University-wide Centers (MIRAE)</span></div>
+      <div class="center-cell"><strong>3</strong><span>Intercollegiate Centers (MIRAE)</span></div>
+      <div class="center-cell"><strong>18</strong><span>College & Grad School Centers (MIRAE)</span></div>
+    </div>
+
+    <div style="margin-top:36px; background:#fff; border:1px solid #e0dbd0; padding:28px 26px; border-radius:4px;">
+      <h4 style="font-family:'Playfair Display',serif; font-size:18px; color:#0d1b3e; margin-bottom:10px;">Researchers Portal (PURE)</h4>
+      <p style="font-size:13.5px; color:#555; line-height:1.9;">Yonsei University partners with Elsevier to maintain the PURE Researchers Portal — a comprehensive, open-access database of all faculty publications, research profiles, grants, and collaborative projects. The portal enables global visibility for Yonsei research and facilitates connections with international academic and industry partners. Available at <strong>yonsei.elsevierpure.com</strong>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Severance / Health System -->
+<section>
+  <p class="stag">Yonsei University Health System</p>
+  <h2 class="stitle">Severance Hospital & Clinical Research</h2>
+
+  <div class="severance-section">
+    <div class="severance-text">
+      <h2>Asia's Premier Academic Health System</h2>
+      <p>The Yonsei University Health System (YUHS) is one of Korea's largest and most prestigious academic medical systems, comprising Severance Hospital in Sinchon, Gangnam Severance Hospital, and Wonju Severance Christian Hospital. Together, these institutions serve over two million patients annually while training the next generation of physicians and conducting cutting-edge clinical research.</p>
+      <p>Severance Hospital — founded in 1885 as Korea's first modern hospital by American missionary Horace N. Allen — holds a unique place in Korean medical history. Today it operates at the forefront of organ transplantation, cancer treatment, cardiovascular surgery, and precision medicine, with facilities ranked among the best in Asia.</p>
+      <p>Clinical research at YUHS is directly integrated into Yonsei's graduate medical programs. Physician-scientists at the College of Medicine, College of Dentistry, College of Nursing, and College of Pharmacy collaborate with clinical faculty to design and conduct trials that translate laboratory discoveries into life-saving treatments.</p>
+    </div>
+    <div class="severance-highlight">
+      <h4>Yonsei Health System</h4>
+      <ul>
+        <li>Severance Hospital — Sinchon, Seoul</li>
+        <li>Gangnam Severance Hospital — Gangnam, Seoul</li>
+        <li>Wonju Severance Christian Hospital — Wonju</li>
+        <li>Founded 1885 — Korea's first modern hospital</li>
+        <li>College of Medicine, Dentistry, Nursing & Pharmacy</li>
+        <li>Cutting-edge oncology & transplant research</li>
+        <li>Physician-Scientist integrated training programs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="quote">
+  <blockquote>"With a focus on future sustainability — including artificial intelligence, biotechnology, and renewable energy — Yonsei will seek to elevate our global research competitiveness."</blockquote>
+  <cite>— President Dong-Sup Yoon, Yonsei University</cite>
+</div>
+
+<footer>
+  <div class="fg">
+    <div class="fc">
+      <h4>Research</h4>
+      <ul>
+        <li><a href="research.html">Research Centers</a></li>
+        <li><a href="research.html">Researchers Portal</a></li>
+        <li><a href="research.html">Health System</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Academics</h4>
+      <ul>
+        <li><a href="academics.html">Programs</a></li>
+        <li><a href="admissions.html">Apply</a></li>
+        <li><a href="about.html">About Yonsei</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">50 Yonsei-ro, Seodaemun-gu</a></li>
+        <li><a href="#">Seoul, 03722, Republic of Korea</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb">
+    <p>50 Yonsei-ro, Seodaemun-gu, Seoul, 03722, Republic of Korea</p>
+    <p>© 2025 Yonsei University. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

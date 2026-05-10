@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Yonsei University</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@400;600;700i&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .about-intro { display:flex; gap:60px; align-items:flex-start; flex-wrap:wrap; margin-bottom:70px; }
+  .about-intro-text { flex:1.4; min-width:280px; }
+  .about-intro-text h2 { font-family:'Playfair Display',serif; font-size:34px; color:#0d1b3e; margin-bottom:18px; line-height:1.3; }
+  .about-intro-text p { font-size:14px; color:#555; line-height:1.9; margin-bottom:14px; }
+  .about-intro-aside { flex:1; min-width:260px; background:#0d1b3e; color:#fff; padding:36px 30px; border-radius:4px; }
+  .about-intro-aside h3 { font-family:'Playfair Display',serif; font-size:20px; color:#c8a84b; margin-bottom:16px; }
+  .about-intro-aside p { font-size:13px; line-height:1.8; color:#ccc; margin-bottom:10px; }
+  .about-intro-aside cite { display:block; margin-top:18px; font-size:12px; color:#c8a84b; letter-spacing:1px; font-style:italic; border-top:1px solid #1e3060; padding-top:14px; }
+
+  .values-grid { display:flex; gap:24px; flex-wrap:wrap; margin-top:20px; }
+  .value-box { flex:1; min-width:200px; padding:30px 24px; border-radius:4px; }
+  .value-box.truth { background:#0d1b3e; color:#fff; }
+  .value-box.freedom { background:#c8a84b; color:#0d1b3e; }
+  .value-box .v-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; margin-bottom:12px; opacity:.7; }
+  .value-box h3 { font-family:'Playfair Display',serif; font-size:30px; margin-bottom:12px; }
+  .value-box p { font-size:13px; line-height:1.8; opacity:.85; }
+
+  .history-timeline { position:relative; padding-left:28px; border-left:2px solid #c8a84b; }
+  .timeline-item { margin-bottom:36px; position:relative; }
+  .timeline-item::before { content:''; position:absolute; left:-35px; top:4px; width:12px; height:12px; background:#c8a84b; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px #c8a84b; }
+  .timeline-year { font-size:11px; letter-spacing:3px; color:#c8a84b; text-transform:uppercase; margin-bottom:6px; }
+  .timeline-item h4 { font-family:'Playfair Display',serif; font-size:17px; color:#0d1b3e; margin-bottom:6px; }
+  .timeline-item p { font-size:13px; color:#666; line-height:1.7; }
+
+  .president-section { background:#f9f7f2; padding:70px 40px; }
+  .president-inner { max-width:1100px; margin:0 auto; display:flex; gap:56px; align-items:flex-start; flex-wrap:wrap; }
+  .president-photo { width:180px; height:220px; background:#0d1b3e; flex-shrink:0; border-top:4px solid #c8a84b; display:flex; align-items:center; justify-content:center; color:#c8a84b; font-size:11px; letter-spacing:2px; border-radius:2px; }
+  .president-content { flex:1; min-width:260px; }
+  .president-content .stag { margin-bottom:8px; }
+  .president-content h2 { font-family:'Playfair Display',serif; font-size:28px; color:#0d1b3e; margin-bottom:4px; }
+  .president-content .title { font-size:12px; color:#c8a84b; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px; }
+  .president-content p { font-size:13.5px; color:#555; line-height:1.9; margin-bottom:12px; }
+
+  .glance-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1px; background:#e0dbd0; border:1px solid #e0dbd0; margin-top:30px; }
+  .glance-cell { background:#fff; padding:28px 22px; }
+  .glance-cell .gc-num { font-family:'Playfair Display',serif; font-size:34px; color:#c8a84b; }
+  .glance-cell .gc-label { font-size:11px; color:#888; letter-spacing:2px; text-transform:uppercase; margin-top:4px; }
+  .glance-cell .gc-sub { font-size:12px; color:#aaa; margin-top:4px; }
+
+  .campuses-grid { display:flex; gap:20px; flex-wrap:wrap; margin-top:20px; }
+  .campus-card { flex:1; min-width:240px; border:1px solid #e0dbd0; padding:28px 24px; border-radius:4px; position:relative; overflow:hidden; }
+  .campus-card::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:#c8a84b; }
+  .campus-card h3 { font-family:'Playfair Display',serif; font-size:18px; color:#0d1b3e; margin-bottom:8px; }
+  .campus-card .campus-tag { font-size:10px; letter-spacing:3px; color:#c8a84b; text-transform:uppercase; margin-bottom:10px; }
+  .campus-card p { font-size:13px; color:#666; line-height:1.7; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="lc">Y</div>
+    <div class="lt">YONSEI <span>UNIVERSITY</span></div>
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="campus.html">Campus Life</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <p class="tag">Our Story</p>
+  <h1>About Yonsei</h1>
+  <p>Founded in 1885, Yonsei University stands as one of Asia's most distinguished academic institutions — built on truth, freedom, and 140 years of shaping Korea's future.</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n">140+</div><div class="stat-l">Years of History</div></div>
+  <div class="stat"><div class="stat-n">40,251</div><div class="stat-l">Total Students</div></div>
+  <div class="stat"><div class="stat-n">381,000+</div><div class="stat-l">Alumni Worldwide</div></div>
+  <div class="stat"><div class="stat-n">175</div><div class="stat-l">Research Centers</div></div>
+</div>
+
+<!-- President Section -->
+<div class="president-section">
+  <div class="president-inner">
+    <div class="president-photo" style="padding:0; overflow:hidden;">
+      <img src="president.jpg" alt="President Dong-Sup Yoon" style="width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+    <div class="president-content">
+      <p class="stag">Office of the President</p>
+      <h2>Dong-Sup Yoon</h2>
+      <p class="title">20th President, Yonsei University</p>
+      <p>Yonsei University has always followed the righteous path through the twists and turns of Korea's modern history. As a distinguished global academic institution, Yonsei has made significant contributions to society and humanity. Inheriting this prestigious tradition, we aim to advance into a new era of Yonsei, thereby opening the gateway to the future with what makes us uniquely YONSEI.</p>
+      <p>In the age of "Big Blur," we are experiencing the collapse of boundaries between academia and industry. We are confronted with the dual challenges of digital transformation and energy transition on the fiercely competitive battlefield of innovation. Words like creativity, consilience, and convergence have long since become keywords in our society. Innovation is the only way to stay relevant in this rapidly changing international environment.</p>
+      <p>Yonsei's enduring mission for over 140 years has been to nurture talents who drive innovation and change. We will continue to build on this foundation, cultivating individuals who proactively tackle the problems of global society while pursuing the values of coexistence.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Spirit & Philosophy -->
+<section>
+  <p class="stag">Vision & Mission</p>
+  <h2 class="stitle">Spirit & Philosophy</h2>
+  <p class="ssub">Yonsei University is dedicated to educating future leaders of our society in the spirit of Christianity, fostering a strong and lasting commitment to the principles of truth and freedom.</p>
+
+  <div class="about-intro">
+    <div class="about-intro-text">
+      <h2>Our Guiding Philosophy</h2>
+      <p>Yonsei University serves as the "alma mater" of all arts and sciences to nurture leaders who will contribute to Korean and international society, in the ecumenical spirit of Christian teaching epitomized in its motto of "truth and freedom." Yonseians will inherit mankind's cultural legacy, and lead academic development through creativity and critical thinking.</p>
+      <p>We serve others with an open heart and contribute to the prosperity of humankind. With these missions, Yonseians demonstrate leadership to realize the Yonsei spirit globally. Our interdisciplinary research initiative is rooted in a humanistic understanding of humanity and nature embedded in Yonsei spirit.</p>
+      <p>With a focus on future sustainability — including artificial intelligence, biotechnology, and renewable energy — Yonsei will seek to elevate global research competitiveness. We will strengthen programs that foster creative future talent, such as the "Student-Designed Semester," enabling students to freely explore academia and grow as independent agents of the future society.</p>
+    </div>
+    <div class="about-intro-aside">
+      <h3>Mission Statement</h3>
+      <p>Yonsei University is dedicated to educate future leaders of our society in the spirit of Christianity, fostering a strong and lasting commitment to the principles of truth and freedom.</p>
+      <cite>"If you hold to my teaching, you are really my disciples, then you will know the truth, and the truth will set you free." — John 8:31–32</cite>
+    </div>
+  </div>
+
+  <div class="values-grid">
+    <div class="value-box truth">
+      <div class="v-label">Core Value</div>
+      <h3>Truth</h3>
+      <p>Academic integrity and the relentless pursuit of knowledge have defined Yonsei for over 140 years. We nurture scholars who push the boundaries of human understanding with courage, rigor, and intellectual honesty.</p>
+    </div>
+    <div class="value-box freedom">
+      <div class="v-label">Core Value</div>
+      <h3>Freedom</h3>
+      <p>Freedom is the environment in which truth flourishes. Yonsei fosters an open campus where diverse ideas, bold inquiry, and independent thinking empower each student to discover their own path as a leader.</p>
+    </div>
+  </div>
+</section>
+
+<!-- History Timeline -->
+<div class="quote">
+  <blockquote>"Yonsei University has always followed the righteous path through the twists and turns of Korea's modern history."</blockquote>
+  <cite>— President Dong-Sup Yoon, 20th President of Yonsei University</cite>
+</div>
+
+<section>
+  <p class="stag">Our Heritage</p>
+  <h2 class="stitle">140 Years of History</h2>
+  <p class="ssub">From a small Christian mission school in 1885 to one of Asia's foremost research universities, Yonsei's story is inseparable from Korea's own modern transformation.</p>
+
+  <div class="history-timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">1885</div>
+      <h4>Founding of Gwanghyewon</h4>
+      <p>American missionary Horace N. Allen established Gwanghyewon, Korea's first modern hospital and medical school. This institution became the seed from which Severance Union Medical College would grow, eventually forming one half of Yonsei University.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1915</div>
+      <h4>Chosun Christian College Established</h4>
+      <p>American missionary Horace G. Underwood founded the Chosun Christian College — the first modern higher education institution in Korea — laying the academic foundation for what would become Yonsei University. The Department of Commerce, established in the same year, is the oldest business school in Korea.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1917</div>
+      <h4>Severance Union Medical College</h4>
+      <p>Severance Union Medical College was formally established, consolidating the legacy of modern medical education in Korea and cementing Yonsei's commitment to health sciences that continues through the world-renowned Severance Hospital today.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1946</div>
+      <h4>Yonhi College Becomes a University</h4>
+      <p>Chosun Christian College was renamed Yonhi University, marking the expansion of its academic programs and its role in rebuilding Korean society following the liberation from Japanese colonial rule.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1957</div>
+      <h4>Merger — Birth of Yonsei University</h4>
+      <p>Yonhi University and Severance Union Medical College merged to form Yonsei University — a name combining "Yonhi" and "Severance" — creating one of Korea's most comprehensive research universities with deep roots in both the liberal arts and medical sciences.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2010</div>
+      <h4>Songdo International Campus Opens</h4>
+      <p>Yonsei established its International Campus in Songdo, Incheon — a state-of-the-art residential campus where all freshmen (except medical and dental students) complete their first year, experiencing interdisciplinary liberal arts education in a diverse, global environment.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2024</div>
+      <h4>Vision: Yonsei 150</h4>
+      <p>Under the leadership of 20th President Dong-Sup Yoon, Yonsei launched its ambitious "Empower! Be YONSEI!" vision — charting a course toward the university's 150th anniversary in 2035, with a focus on AI, biotechnology, renewable energy, and interdisciplinary global leadership.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Yonsei at a Glance -->
+<section style="background:#f9f7f2; max-width:100%; padding:80px 40px;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="stag">At a Glance</p>
+    <h2 class="stitle">Yonsei by the Numbers</h2>
+    <p class="ssub">A snapshot of Yonsei University as of April 2024, reflecting our scale, reach, and commitment to academic excellence.</p>
+
+    <div class="glance-grid">
+      <div class="glance-cell"><div class="gc-num">32,532</div><div class="gc-label">Main Campus Students</div><div class="gc-sub">Undergraduate, Master & PhD</div></div>
+      <div class="glance-cell"><div class="gc-num">7,719</div><div class="gc-label">MIRAE Campus Students</div><div class="gc-sub">Wonju, Korea</div></div>
+      <div class="glance-cell"><div class="gc-num">6,375</div><div class="gc-label">International Students</div><div class="gc-sub">From around the world</div></div>
+      <div class="glance-cell"><div class="gc-num">1,786</div><div class="gc-label">Full-time Faculty</div><div class="gc-sub">Main Campus</div></div>
+      <div class="glance-cell"><div class="gc-num">175</div><div class="gc-label">Research Centers</div><div class="gc-sub">Across both campuses</div></div>
+      <div class="glance-cell"><div class="gc-num">5,537</div><div class="gc-label">Courses Offered</div><div class="gc-sub">Undergraduate & Graduate</div></div>
+      <div class="glance-cell"><div class="gc-num">10,012</div><div class="gc-label">On-Campus Housing</div><div class="gc-sub">Capacity (Main Campus)</div></div>
+      <div class="glance-cell"><div class="gc-num">381,418</div><div class="gc-label">Alumni Worldwide</div><div class="gc-sub">Since 1915</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Campuses -->
+<section>
+  <p class="stag">Campus Network</p>
+  <h2 class="stitle">Our Campuses</h2>
+  <p class="ssub">Yonsei operates two major campuses in Korea, each serving distinct academic missions while sharing a unified commitment to excellence and innovation.</p>
+
+  <div class="campuses-grid">
+    <div class="campus-card">
+      <div class="campus-tag">Main Campus</div>
+      <h3>Sinchon, Seoul</h3>
+      <p>The heart of Yonsei University, located in the Seodaemun district of Seoul. Home to 14 colleges and 15 graduate schools, the Sinchon campus spans a beautiful, historic campus featuring iconic buildings including the landmark Underwood Hall. The campus houses over 32,000 students and more than 150 research centers.</p>
+    </div>
+    <div class="campus-card">
+      <div class="campus-tag">International Campus</div>
+      <h3>Songdo, Incheon</h3>
+      <p>Opened in 2010 within the Songdo International Business District, this state-of-the-art residential campus serves as the first-year home for all incoming undergraduate students (excluding medical, dental, and music majors). The campus offers 5 colleges and an immersive liberal arts residential college experience.</p>
+    </div>
+    <div class="campus-card">
+      <div class="campus-tag">MIRAE Campus</div>
+      <h3>Wonju, Gangwon</h3>
+      <p>The MIRAE (Future) Campus in Wonju operates as Yonsei's regional campus, offering 4 colleges, 2 divisions, and 3 graduate schools. With approximately 7,700 students and its own medical school — Wonju College of Medicine — the campus extends Yonsei's academic reach beyond Seoul.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fg">
+    <div class="fc">
+      <h4>About Yonsei</h4>
+      <ul>
+        <li><a href="about.html">History</a></li>
+        <li><a href="about.html">Spirit &amp; Philosophy</a></li>
+        <li><a href="about.html">President's Message</a></li>
+        <li><a href="about.html">Campuses</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Academics</h4>
+      <ul>
+        <li><a href="academics.html">Undergraduate Programs</a></li>
+        <li><a href="academics.html">Graduate Schools</a></li>
+        <li><a href="academics.html">Research Centers</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">50 Yonsei-ro, Seodaemun-gu</a></li>
+        <li><a href="#">Seoul, 03722, Republic of Korea</a></li>
+        <li><a href="#">+82-2-2123-2114</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb">
+    <p>50 Yonsei-ro, Seodaemun-gu, Seoul, 03722, Republic of Korea</p>
+    <p>© 2025 Yonsei University. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
